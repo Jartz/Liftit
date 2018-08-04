@@ -53,9 +53,9 @@ El sistema cuenta con 2 vistas principales:
 
 ## Vistas Previa
 <p align="center">
-  <img width="460" height="300" src="https://ibb.co/diQ0Fe">
-  <img width="460" height="300" src="(https://ibb.co/fyqHve">
-  <img width="460" height="300" src="https://ibb.co/mNLBMK">
+  <img width="460" height="300" src="https://image.ibb.co/nrFNTz/Screen_Shot_2018_08_03_at_8_11_01_PM.png">
+  <img width="460" height="300"src="https://preview.ibb.co/eoPcve/Screen_Shot_2018_08_03_at_8_12_12_PM.png">
+  <img width="460" height="300" src="https://preview.ibb.co/dXeSve/Screen_Shot_2018_08_03_at_8_10_48_PM.png">
 </p>
 
 
