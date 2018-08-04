@@ -22,7 +22,8 @@ class LoginContainer extends Component {
             distancia: '0',
             duracion: '0',
             DivCard: true,
-            DivSearch:false    
+            DivSearch:false,
+            alert:false   
         };
     }
     handleSubmit(e){
@@ -100,18 +101,13 @@ class LoginContainer extends Component {
 
     getDistanceMatrix(origen, destino){
 
-        const headers = new Headers({
-        "Content-Type": "application/json",
-        "Authorization": "Basic bmltZXNoLnBhdGVsQHRhdHZhc29mdC5jb206cGFzc3dvcmQ=",
-        "mode": "no-cors",
-        "Access-Control-Allow-Origin": "*" 
-        });
-
+      
+       
         var url='https://maps.googleapis.com/maps/api/distancematrix/json?units=metric&origins='+origen+'&destinations='+destino+'&key=AIzaSyDuOYYkhp3Cgbd8o8MscHu31mWrK0f6Bp4';
-        fetch(url, {method: 'GET',headers,})
+        fetch(url)
             .then(response => response.json())
             .then(datas => {
-                console.log(datas)
+                console.log(datas);
                 var origen_Exacto = datas.origin_addresses[0];
                 var destino_Exacto = datas.destination_addresses[0];
                 
@@ -140,7 +136,8 @@ class LoginContainer extends Component {
                                     const newItem = { text: this.state.descripcion, id: Date.now(), origen: origen_Exacto , destino: destino_Exacto};
                                 this.setState(prevState => ({
                                     servicios: prevState.servicios.concat(newItem),
-                                    descripcion: ''
+                                    descripcion: '',
+                                    alert:false
                                 }));
                                 
                                 console.log(this.state.servicios);
@@ -154,6 +151,9 @@ class LoginContainer extends Component {
                         })
                     })   
                      
+            })
+            .catch( err => {
+                this.setState({alert:true})
             });
 
     }
@@ -226,6 +226,9 @@ class LoginContainer extends Component {
                             </div>
                             <div className="row">
                                 <span style={DivSearch}>Servicios</span>
+                                    
+                                <span>{this.state.alert ? <a style={{color:"red"}} target="_blank" href="https://chrome.google.com/webstore/detail/allow-control-allow-origi/nlfbmbojpeacfghkpbjhddihlkkiljbi?utm_source=chrome-ntp-icon">Descarga y activa : <span style={{color:"black"}}>Allow-Control-Allow-Origin</span></a> : ''}</span>
+
                                 <DashboardList items={this.state.servicios} />
                             </div>
                         </div>
