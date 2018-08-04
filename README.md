@@ -51,6 +51,13 @@ El sistema cuenta con 2 vistas principales:
 <li><strong>Login</strong> :esta vista permite validar el login.</li>
 <li><strong>Dashboard</strong> :la vista permite por medio de 3 input solicitar un servicio.</li>
 
+## Vistas Previa
+<p align="center">
+  <img width="460" height="300" src="https://ibb.co/diQ0Fe">
+  <img width="460" height="300" src="(https://ibb.co/fyqHve">
+  <img width="460" height="300" src="https://ibb.co/mNLBMK">
+</p>
+
 
 --------------------------------------
 
